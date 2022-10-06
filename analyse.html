@@ -1,0 +1,466 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>F1 +</title>
+
+    <!-- REMIX ICON -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+	
+	<!-- SWIPER CSS -->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+	
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+	<!-- HEADER -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav_logo">
+                F1+
+            </a>
+
+            <div class="nav_menu" id="nav-menu">
+                <ul class="nav_list">
+                    <li class="nav_item">
+                        <a href="index.html" class="nav_link">Home</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#" class="nav_link">Read Analysis</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#" class="nav_link">Make Analysis</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#" class="nav_link">Information</a>
+                    </li>
+
+                    <div class="nav_close" id="nav-close">
+                        <i class="ri-close-line"></i>
+                    </div>
+                </ul>
+            </div>
+
+            <!-- Toggle Button -->
+            <div class="nav_toggle" id="nav-toggle">
+                <i class="ri-menu-line"></i>
+            </div>
+        </nav>
+    </header>
+	
+	<!-- MAIN -->
+	<main class="main">
+		<section class="analyse_section">
+			<h2 class="section_analyse_title">Paramètres de l'analyse</h2>
+			
+			<form class="analyse_form" method="POST" action="">
+				<div>
+					<input type="radio" id="corner" value="corner" name="type">
+					<label for="corner">Analyse de virage</label>
+				</div>
+				<div>
+					<input type="radio" id="speed" value="speed" name="type">
+					<label for="speed">Analyse de vitesse</label>
+				</div>
+				<div>
+					<input type="radio" id="tyre" value="tyre" name="type">
+					<label for="tyre">Analyse de pneu</label>
+				</div>
+
+				<input type="text" name="driver1Name" id="input1">
+				<input type="text" name="driver2Name" id="input2">
+
+				<div class="analyse_content_top grid">
+					<article class="analyse_card" id="driver1">
+						<div class="shape shape_smaller"></div>
+						
+						<h1 class="analyse_title" id="name1">Pilote Numéro 1</h1>
+						
+						<!-- <h3 class="analyse_subtitle">Ferrari</h3> -->
+						
+						<!-- <img src="assets/img/lec.png" alt="Leclerc" class="analyse_img"> -->
+						
+						<!-- <button class="button analyse_button">
+							<i class="ri-add-line"></i>
+						</button> -->
+					</article>
+
+					<article class="analyse_card" id="driver2">
+						<div class="shape shape_smaller"></div>
+						
+						<h1 class="analyse_title" id="name2">Pilote Numéro 2</h1>
+						
+						<!-- <h3 class="analyse_subtitle">Ferrari</h3> -->
+						
+						<!-- <img src="assets/img/lec.png" alt="Leclerc" class="analyse_img"> -->
+						
+						<!-- <button class="button analyse_button">
+							<i class="ri-add-line"></i>
+						</button> -->
+					</article>
+				</div>
+
+				<select name="race" id="race">
+					<option value="">-- Select a Race --</option>
+					<option value="Bahreïn">GP de Bahreïn</option>
+					<option value="Saudi Arabia">GP d'Arabie Saoudite</option>
+					<option value="Australia">GP d'Australie</option>
+					<option value="Emilia Romagna">GP d'Emilie-Romagne</option>
+					<option value="Miami">GP de Miami</option>
+					<option value="Spain">GP d'Espagne</option>
+					<option value="Monaco">GP de Monaco</option>
+					<option value="Azerbaïdjan">GP d'Azerbaïdjan</option>
+				</select>
+
+				<input type="submit" value="Run" class="button" name="submitAnalyse">
+			</form>
+			
+			<div class="analyse_container container">
+				<ul class="analyse_filters">
+					<li>
+						<button class="analyse_item active-analyse" data-filter="all">
+							<span>All</span>
+						</button>
+					</li>
+					<li>
+						<button class="analyse_item" data-filter=".ferrari">
+							<img src="assets/img/fer.png" alt="ferrari">
+						</button>
+					</li>
+					<li>
+						<button class="analyse_item" data-filter=".redbull">
+							<img src="assets/img/red.png" alt="redbull">
+						</button>
+					</li>
+					<li>
+						<button class="analyse_item" data-filter=".mercedes">
+							<img src="assets/img/mer.png" alt="mercedes">
+						</button>
+					</li>
+					<li>
+						<button class="analyse_item" data-filter=".mclaren">
+							<img src="assets/img/mcl.png" alt="mclaren">
+						</button>
+					</li>
+					<li>
+						<button class="analyse_item" data-filter=".aston">
+							<img src="assets/img/ast.png" alt="aston">
+						</button>
+					</li>
+					<li>
+						<button class="analyse_item" data-filter=".alpha">
+							<img src="assets/img/alph.png" alt="alpha">
+						</button>
+					</li>
+					<li>
+						<button class="analyse_item" data-filter=".alpine">
+							<img src="assets/img/alp.png" alt="alpine">
+						</button>
+					</li>
+					<li>
+						<button class="analyse_item" data-filter=".haas">
+							<img src="assets/img/haa.png" alt="haas">
+						</button>
+					</li>
+					<li>
+						<button class="analyse_item" data-filter=".alfa">
+							<img src="assets/img/alf.png" alt="alfa">
+						</button>
+					</li>
+				</ul>
+				
+				<div class="analyse_content grid">
+					<article class="analyse_card mix ferrari" id="lec">
+						<div class="shape shape_smaller"></div>
+						
+						<h1 class="analyse_title">Charles Leclerc</h1>
+						
+						<h3 class="analyse_subtitle">Ferrari</h3>
+						
+						<img src="assets/img/Leclerc.png" alt="Leclerc" class="analyse_img">
+						
+						<a href="javascript:putDriver('Leclerc')" class="button analyse_button">
+							<i class="ri-add-line"></i>
+						</a>
+					</article>
+				
+					<article class="analyse_card mix redbull">
+						<div class="shape shape_smaller"></div>
+						
+						<h1 class="analyse_title">Max Verstappen</h1>
+						
+						<h3 class="analyse_subtitle">Red Bull</h3>
+						
+						<img src="assets/img/Verstappen.png" alt="Verstappen" class="analyse_img">
+						
+						<a href="javascript:putDriver('Verstappen')" class="button analyse_button">
+							<i class="ri-add-line"></i>
+						</a>
+					</article>
+				
+					<article class="analyse_card mix mercedes">
+						<div class="shape shape_smaller"></div>
+						
+						<h1 class="analyse_title">George Russel</h1>
+						
+						<h3 class="analyse_subtitle">Mercedes</h3>
+						
+						<img src="assets/img/Russel.png" alt="Russel" class="analyse_img">
+						
+						<a href="javascript:putDriver('Russel')" class="button analyse_button">
+							<i class="ri-add-line"></i>
+						</a>
+					</article>
+				
+					<article class="analyse_card mix mclaren">
+						<div class="shape shape_smaller"></div>
+						
+						<h1 class="analyse_title">Lando Norris</h1>
+						
+						<h3 class="analyse_subtitle">McLaren</h3>
+						
+						<img src="assets/img/Norris.png" alt="Norris" class="analyse_img">
+						
+						<a href="javascript:putDriver('Norris')" class="button analyse_button">
+							<i class="ri-add-line"></i>
+						</a>
+					</article>
+				
+					<article class="analyse_card mix alfa">
+						<div class="shape shape_smaller"></div>
+						
+						<h1 class="analyse_title">Valtteri Bottas</h1>
+						
+						<h3 class="analyse_subtitle">Alfa Romeo</h3>
+						
+						<img src="assets/img/Bottas.png" alt="Bottas" class="analyse_img">
+						
+						<a href="javascript:putDriver('Bottas')" class="button analyse_button">
+							<i class="ri-add-line"></i>
+						</a>
+					</article>
+				
+					<article class="analyse_card mix alpine">
+						<div class="shape shape_smaller"></div>
+						
+						<h1 class="analyse_title">Esteban Ocon</h1>
+						
+						<h3 class="analyse_subtitle">Alpine</h3>
+						
+						<img src="assets/img/Ocon.png" alt="Ocon" class="analyse_img">
+						
+						<a href="javascript:putDriver('Ocon')" class="button analyse_button">
+							<i class="ri-add-line"></i>
+						</a>
+					</article>
+				
+					<article class="analyse_card mix aston">
+						<div class="shape shape_smaller"></div>
+						
+						<h1 class="analyse_title">Lance Stroll</h1>
+						
+						<h3 class="analyse_subtitle">Aston Martin</h3>
+						
+						<img src="assets/img/Stroll.png" alt="Stroll" class="analyse_img">
+						
+						<a href="javascript:putDriver('Stroll')" class="button analyse_button">
+							<i class="ri-add-line"></i>
+						</a>
+					</article>
+				
+					<article class="analyse_card mix alpha">
+						<div class="shape shape_smaller"></div>
+						
+						<h1 class="analyse_title">Pierre Gasly</h1>
+						
+						<h3 class="analyse_subtitle">Alpha Tauri</h3>
+						
+						<img src="assets/img/Gasly.png" alt="Gasly" class="analyse_img">
+						
+						<a href="javascript:putDriver('Gasly')" class="button analyse_button">
+							<i class="ri-add-line"></i>
+						</a>
+					</article>
+				
+					<article class="analyse_card mix alpine">
+						<div class="shape shape_smaller"></div>
+						
+						<h1 class="analyse_title">Fernando Alonso</h1>
+						
+						<h3 class="analyse_subtitle">Alpine</h3>
+						
+						<img src="assets/img/Alonso.png" alt="Alonso" class="analyse_img">
+						
+						<a href="javascript:putDriver('Alonso')" class="button analyse_button">
+							<i class="ri-add-line"></i>
+						</a>
+					</article>
+				
+					<article class="analyse_card mix mclaren">
+						<div class="shape shape_smaller"></div>
+						
+						<h1 class="analyse_title">Daniel Ricciardo</h1>
+						
+						<h3 class="analyse_subtitle">McLaren</h3>
+						
+						<img src="assets/img/Ricciardo.png" alt="Ricciardo" class="analyse_img">
+						
+						<a href="javascript:putDriver('Ricciardo')" class="button analyse_button">
+							<i class="ri-add-line"></i>
+						</a>
+					</article>
+				
+					<article class="analyse_card mix haas">
+						<div class="shape shape_smaller"></div>
+						
+						<h1 class="analyse_title">Kevin Magnussen</h1>
+						
+						<h3 class="analyse_subtitle">Haas</h3>
+						
+						<img src="assets/img/Magnussen.png" alt="Magnussen" class="analyse_img">
+						
+						<a href="javascript:putDriver('Magnussen')" class="button analyse_button">
+							<i class="ri-add-line"></i>
+						</a>
+					</article>
+				
+					<article class="analyse_card mix williams">
+						<div class="shape shape_smaller"></div>
+						
+						<h1 class="analyse_title">Alexander Albon</h1>
+						
+						<h3 class="analyse_subtitle">Williams</h3>
+						
+						<img src="assets/img/Albon.png" alt="Albon" class="analyse_img">
+						
+						<a href="javascript:putDriver('Albon')" class="button analyse_button">
+							<i class="ri-add-line"></i>
+						</a>
+					</article>
+				
+					<article class="analyse_card mix ferrari">
+						<div class="shape shape_smaller"></div>
+						
+						<h1 class="analyse_title">Carlos Sainz</h1>
+						
+						<h3 class="analyse_subtitle">Ferrari</h3>
+						
+						<img src="assets/img/Sainz.png" alt="Sainz" class="analyse_img">
+						
+						<a href="javascript:putDriver('Sainz')" class="button analyse_button">
+							<i class="ri-add-line"></i>
+						</a>
+					</article>
+				
+					<article class="analyse_card mix alpha">
+						<div class="shape shape_smaller"></div>
+						
+						<h1 class="analyse_title">Yuki Tsunoda</h1>
+						
+						<h3 class="analyse_subtitle">Alpha Tauri</h3>
+						
+						<img src="assets/img/Tsunoda.png" alt="Tsunoda" class="analyse_img">
+						
+						<a href="javascript:putDriver('Tsunoda')" class="button analyse_button">
+							<i class="ri-add-line"></i>
+						</a>
+					</article>
+				
+					<article class="analyse_card mix alfa">
+						<div class="shape shape_smaller"></div>
+						
+						<h1 class="analyse_title">Zhou Guanyu</h1>
+						
+						<h3 class="analyse_subtitle">Alfa Romeo</h3>
+						
+						<img src="assets/img/Zhou.png" alt="Guanyu" class="analyse_img">
+						
+						<a href="javascript:putDriver('Zhou')" class="button analyse_button">
+							<i class="ri-add-line"></i>
+						</a>
+					</article>
+				
+					<article class="analyse_card mix redbull">
+						<div class="shape shape_smaller"></div>
+						
+						<h1 class="analyse_title">Sergio Perez</h1>
+						
+						<h3 class="analyse_subtitle">Red Bull</h3>
+						
+						<img src="assets/img/Perez.png" alt="Perez" class="analyse_img">
+						
+						<a href="javascript:putDriver('Perez')" class="button analyse_button">
+							<i class="ri-add-line"></i>
+						</a>
+					</article>
+				
+					<article class="analyse_card mix haas">
+						<div class="shape shape_smaller"></div>
+						
+						<h1 class="analyse_title">Mick Schumacher</h1>
+						
+						<h3 class="analyse_subtitle">Haas</h3>
+						
+						<img src="assets/img/Schumacher.png" alt="Schumacher" class="analyse_img">
+						
+						<a href="javascript:putDriver('Schumacher')" class="button analyse_button">
+							<i class="ri-add-line"></i>
+						</a>
+					</article>
+				
+					<article class="analyse_card mix mercedes">
+						<div class="shape shape_smaller"></div>
+						
+						<h1 class="analyse_title">Lewis Hamilton</h1>
+						
+						<h3 class="analyse_subtitle">Mercedes</h3>
+						
+						<img src="assets/img/Hamilton.png" alt="Hamilton" class="analyse_img">
+						
+						<a href="javascript:putDriver('Hamilton')" class="button analyse_button">
+							<i class="ri-add-line"></i>
+						</a>
+					</article>
+				
+					<article class="analyse_card mix aston">
+						<div class="shape shape_smaller"></div>
+						
+						<h1 class="analyse_title">Sebastian Vettel</h1>
+						
+						<h3 class="analyse_subtitle">Aston Martin</h3>
+						
+						<img src="assets/img/Vettel.png" alt="Vettel" class="analyse_img">
+						
+						<a href="javascript:putDriver('Vettel')" class="button analyse_button">
+							<i class="ri-add-line"></i>
+						</a>
+					</article>
+
+					<article class="analyse_card mix williams">
+						<div class="shape shape_smaller"></div>
+						
+						<h1 class="analyse_title">Nicholas Latifi</h1>
+						
+						<h3 class="analyse_subtitle">Williams</h3>
+						
+						<img src="assets/img/Latifi.png" alt="Latifi" class="analyse_img">
+						
+						<a href="javascript:putDriver('Latifi')" class="button analyse_button">
+							<i class="ri-add-line"></i>
+						</a>
+					</article>
+				</div>
+			<div>
+		</section>
+	</main>
+
+	<!--=============== MIXITUP JS ===============-->
+    <script src="assets/js/mixitup.min.js"></script>
+	
+    <!-- MAIN JS -->
+    <script src="assets/js/analyse.js"></script>
+</body>
+</html>
